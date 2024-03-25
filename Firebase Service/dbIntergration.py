@@ -33,12 +33,7 @@ def select_task_by_priority(conn, priority):
     #c.execute("SELECT * FROM trackingsystem_student WHERE fingerprintID=5")
 
     rows = c.fetchall()
-    #print(rows)
     stateHere = rows[0][5]
-    print("asdad")
-    print(stateHere)
-    #print(type(stateHere))
-
 
     for row in rows:
         print("row")
@@ -52,8 +47,6 @@ def select_task_by_priority(conn, priority):
         c.execute("UPDATE trackingsystem_student SET state=1 WHERE fingerprintID=?", (prioritystring,))
 
     c.execute("SELECT * FROM trackingsystem_student WHERE fingerprintID=?", (priority,))
-    print("fetch")
-    print(c.fetchall())
 
 
 def firebasedef(result):
